@@ -20,6 +20,7 @@ module Deck
 
     needs :style => "swiss"
     needs :transition => "horizontal-slide"
+    needs :custom_javascripts => []
 
     attr_reader :extensions
 
@@ -91,6 +92,11 @@ module Deck
 
       extensions.each do |extension|
         script :type => "text/javascript", :src => public_asset("deck.js/extensions/#{extension}/deck.#{extension}.js")
+      end
+
+      # load custom_javascripts as well
+      @custom_javascripts.each do |custom_javascript|
+        script :type => "text/javascript", :src => public_asset(custom_javascript)
       end
 
       # fire up deck.js
