@@ -21,6 +21,7 @@ module Deck
     needs :style => "swiss"
     needs :transition => "horizontal-slide"
     needs :custom_javascripts => []
+    needs :custom_stylesheets => []
 
     attr_reader :extensions
 
@@ -72,6 +73,11 @@ module Deck
       stylesheet public_asset("coderay.css")
       stylesheet public_asset("tables.css")
       stylesheet public_asset("toc.css")
+
+      # custom stylesheets
+      @custom_stylesheets.each do |custom_stylesheet|
+        stylesheet public_asset(custom_stylesheet)
+      end
     end
 
     def scripts
