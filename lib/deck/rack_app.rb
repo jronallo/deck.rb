@@ -88,7 +88,7 @@ module Deck
       request = Rack::Request.new(env)
       if request.path == "/"
         whole_deck = deck.to_pretty + deck.to_pretty.encoding.to_s
-        [200, {'Content-Type' => 'text/html; charset=utf-8'}, [deck.to_pretty]]
+        [200, {'Content-Type' => 'text/html; charset=utf-8'}, [whole_deck]]
       else
         result = [404, {}, []]
         @file_servers.each do |file_server|
