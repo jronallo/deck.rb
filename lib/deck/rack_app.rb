@@ -87,7 +87,7 @@ module Deck
     def call env
       request = Rack::Request.new(env)
       if request.path == "/"
-        [200, {'Content-Type' => 'text/html'}, [deck.to_pretty]]
+        [200, {'Content-Type' => 'text/html; charset=utf-8'}, [deck.to_pretty]]
       else
         result = [404, {}, []]
         @file_servers.each do |file_server|
