@@ -60,7 +60,6 @@ module Deck
       meta :name => "viewport", :content => "width=1024, user-scalable=no"
       meta :name => "description", :content => @description if @description
       meta :name => "author", :content => @author if @author
-      meta :name => "encoding_test", :content => "├─".encoding
       #  <!-- Core and extension CSS files -->
       stylesheet public_asset("deck.js/core/deck.core.css")
       extensions.each do |extension|
