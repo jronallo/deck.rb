@@ -89,6 +89,7 @@ module Deck
       if request.path == "/"
         whole_deck = deck.to_pretty 
         whole_deck += 'BAD Character!' if whole_deck.include?('â')
+        puts whole_deck
         [200, {'Content-Type' => 'text/html; charset=utf-8'}, [whole_deck]]
       else
         result = [404, {}, []]
