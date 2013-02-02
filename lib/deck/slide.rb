@@ -126,7 +126,7 @@ module Deck
     section :class => @classes, :id => slide_id do
       text "\n" # markdown HTML should be left-aligned, in case of PRE blocks and other quirks
       html = markdown.render(markdown_text)
-      html += markdown_text.encoding.to_s
+      html += markdown_text
       html = munge(html)
       rawtext html
     end
