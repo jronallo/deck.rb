@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 require 'erector'
 here = File.expand_path(File.dirname(__FILE__))
 require "#{here}/deck"

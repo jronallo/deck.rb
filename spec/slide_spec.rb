@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 # based on work by Alex and others in Showoff
 
 require File.expand_path "../spec_helper", __FILE__
