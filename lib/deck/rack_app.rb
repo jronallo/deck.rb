@@ -89,7 +89,7 @@ module Deck
       if request.path == "/"
         whole_deck = deck.to_pretty 
         whole_deck += 'BAD Character!' if whole_deck.include?('â')
-        [200, {'Content-Type' => 'text/html; charset=utf-8'}, [deck.to_pretty]]
+        [200, {'Content-Type' => 'text/html; charset=utf-8'}, [whole_deck]]
       else
         result = [404, {}, []]
         @file_servers.each do |file_server|
