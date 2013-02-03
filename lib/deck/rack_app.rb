@@ -77,7 +77,7 @@ module Deck
     end
 
     def extract_options(config)
-      ["style", "transition", "custom_javascripts", "custom_stylesheets"].each do |key|
+      ["style", "transition", "custom_javascripts", "custom_stylesheets", "extensions"].each do |key|
         if config[key] and !@options[key.to_sym]
           @options[key.to_sym] = config[key]
         end

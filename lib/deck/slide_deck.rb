@@ -9,14 +9,7 @@ module Deck
     needs :title => "deck.rb presentation",
           :description => nil,
           :author => nil
-    needs :extensions => [
-        'goto',
-        'menu',
-        'navigation',
-        'status',
-        'hash',
-        'scale',
-    ]
+    needs :extensions => []
     needs :slides => nil
 
     needs :style => "swiss"
@@ -62,7 +55,7 @@ module Deck
       meta :name => "author", :content => @author if @author
       #  <!-- Core and extension CSS files -->
       stylesheet public_asset("deck.js/core/deck.core.css")
-      extensions.each do |extension|
+      @extensions.each do |extension|
         stylesheet public_asset("deck.js/extensions/#{extension}/deck.#{extension}.css")
       end
 
@@ -96,7 +89,7 @@ module Deck
       comment 'Deck Core and extensions'
       script :type => "text/javascript", :src => public_asset('deck.js/core/deck.core.js')
 
-      extensions.each do |extension|
+      @extensions.each do |extension|
         script :type => "text/javascript", :src => public_asset("deck.js/extensions/#{extension}/deck.#{extension}.js")
       end
 
